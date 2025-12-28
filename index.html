@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knit-Pocket - Luxury at Less</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .announcement-bar {
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: #feca57;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-description {
+            color: white;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .price-comparison {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .apple-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .apple-price span:first-child {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .apple-price span:last-child {
+            font-size: 1.8rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .our-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .our-price span:first-child {
+            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .our-price span:last-child {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .savings-badge {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .coupon-section {
+            background: #fff9e6;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px dashed #feca57;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .coupon-code {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            letter-spacing: 3px;
+            margin: 0.5rem 0;
+        }
+
+        .coupon-text {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .final-price {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .final-price-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .final-price-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .product-image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            backdrop-filter: blur(10px);
+            border: 3px dashed rgba(255,255,255,0.3);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .product-image-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #feca57 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-light {
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .product-showcase.reverse {
+            direction: rtl;
+        }
+
+        .product-showcase.reverse > * {
+            direction: ltr;
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #f8f9fa;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .product-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-info ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .product-info ul li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .product-info ul li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .color-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .color-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .color-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            border: 3px dashed #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            font-size: 3rem;
+        }
+
+        .qr-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        .footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-showcase.reverse {
+                direction: ltr;
+            }
+        }
+
+        .image-upload-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #856404;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        ⚡ PRE-ORDER SALES LIVE NOW! USE CODE "FIRST500" FOR ₹500 OFF! ⚡
+    </div>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Knit-Pocket</h1>
+                <div class="hero-tagline">Luxury at Less</div>
+                <p class="hero-description">
+                    Experience the same premium quality as Apple's $229 USD accessory, now available at an unbelievable price. Premium knit material, versatile design, and exceptional craftsmanship.
+                </p>
+
+                <div class="price-comparison">
+                    <div class="apple-price">
+                        <span>🍎 Apple Original</span>
+                        <span>$229 USD</span>
+                    </div>
+                    <div class="our-price">
+                        <span>Our Price</span>
+                        <span>₹2,299</span>
+                    </div>
+                    <div class="savings-badge">
+                        Save Over 90%! Premium Quality, Unbeatable Price
+                    </div>
+                </div>
+
+                <div class="coupon-section">
+                    <div class="coupon-text">🎉 Exclusive Launch Offer</div>
+                    <div class="coupon-code">FIRST500</div>
+                    <div class="coupon-text">Get ₹500 OFF on your first order!</div>
+                </div>
+
+                <div class="final-price">
+                    <div class="final-price-label">Your Final Price with Coupon</div>
+                    <div class="final-price-amount">₹1,799</div>
+                </div>
+
+                <button class="cta-button" onclick="scrollToContact()">Pre-Order Now & Save!</button>
+            </div>
+
+            <div class="hero-image">
+                <div class="product-image-placeholder">
+                    <!-- HERO IMAGE: Replace this div with your main product hero image -->
+                    <!-- Example: <img src="images/hero-product.jpg" alt="Knit-Pocket Hero"> -->
+                    📸 Hero Product Image
+                    <div class="image-upload-note">
+                        Upload your main product showcase image here (images/hero-product.jpg)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Meet Your Perfect Phone Companion</h2>
+
+            <!-- Product Feature 1 -->
+            <div class="product-showcase">
+                <div class="product-image-container">
+                    <!-- IMAGE 1: Upload vertical/standing product images here -->
+                    <!-- Example: <img src="images/product-vertical.jpg" alt="Knit Pocket Vertical"> -->
+                    <div style="text-align: center; padding: 2rem;">
+                        📸<br>Product Image 1
+                        <div class="image-upload-note">
+                            Upload standing/vertical product image (images/product-vertical.jpg)
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Knit Material</h3>
+                    <p>
+                        Crafted from the finest knit fabric, the same material used in luxury fashion accessories. Each Knit-Pocket is meticulously designed to provide superior protection while maintaining a sleek, modern aesthetic.
+                    </p>
+                    <ul>
+                        <li>Soft-touch premium knit fabric</li>
+                        <li>Scratch and drop protection</li>
+                        <li>Durable stitching for long-lasting use</li>
+                        <li>Comfortable grip and handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product Feature 2 -->
+            <div class="product-showcase reverse">
+                <div class="product-image-container">
+                    <!-- IMAGE 2: Upload colorful product group images here -->
+                    <!-- Example: <img src="images/product-colors.jpg" alt="Knit Pocket Colors"> -->
+                    <div style="text-align: center; padding: 2rem;">
+                        📸<br>Product Image 2
+                        <div class="image-upload-note">
+                            Upload colorful group product image (images/product-colors.jpg)
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>8 Vibrant Colors</h3>
+                    <p>
+                        Express yourself with our diverse color palette. From bold neons to classic neutrals, we've got a shade for every mood and style. Mix and match with your outfits or choose your signature color.
+                    </p>
+                    <ul>
+                        <li>Neon Yellow - Stand out bright</li>
+                        <li>Coral Orange - Warm and energetic</li>
+                        <li>Hot Pink - Bold and confident</li>
+                        <li>Turquoise Blue - Cool and calm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Product Feature 3 -->
+            <div class="product-showcase">
+                <div class="product-image-container">
+                    <!-- IMAGE 3: Upload usage/lifestyle images here -->
+                    <!-- Example: <img src="images/product-usage.jpg" alt="Knit Pocket Usage"> -->
+                    <div style="text-align: center; padding: 2rem;">
+                        📸<br>Product Image 3
+                        <div class="image-upload-note">
+                            Upload product in use/lifestyle image (images/product-usage.jpg)
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Versatile & Functional</h3>
+                    <p>
+                        More than just a phone case - it's a complete carrying solution. Wear it crossbody for hands-free convenience, attach it to your bag, or use the built-in grip for secure handling.
+                    </p>
+                    <ul>
+                        <li>Crossbody strap for hands-free carrying</li>
+                        <li>Universal fit for all phone sizes</li>
+                        <li>Easy access to all phone features</li>
+                        <li>Perfect for travel, events, and daily use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Available in 8 Stunning Colors</h2>
+            <div class="color-gallery">
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #d4ff00;"></div>
+                    <strong>Neon Yellow</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #ff7f50;"></div>
+                    <strong>Coral Orange</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #9370db;"></div>
+                    <strong>Vibrant Purple</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #ff1493;"></div>
+                    <strong>Hot Pink</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #40e0d0;"></div>
+                    <strong>Turquoise Blue</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #4169e1;"></div>
+                    <strong>Royal Blue</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #8b7355;"></div>
+                    <strong>Earthy Brown</strong>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #2c3e50;"></div>
+                    <strong>Classic Black</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Why Choose Knit-Pocket?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Same materials and craftsmanship as luxury brands, tested for durability and comfort</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Unbeatable Price</h3>
+                    <p>Over 90% savings compared to Apple's original while maintaining the same quality</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Superior Protection</h3>
+                    <p>Soft knit material protects your phone from scratches, drops, and daily wear</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌈</div>
+                    <h3>Style Options</h3>
+                    <p>8 vibrant colors to match your personality and outfit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">🎉 Launch Countdown</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 2rem;">
+                Pre-orders are live! Don't miss out on exclusive launch pricing!
+            </p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Stay Connected & Pre-Order Now!</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+                Follow us for exclusive updates and use code <strong style="font-size: 1.5rem; color: #feca57;">FIRST500</strong> for ₹500 OFF!
+            </p>
+            
+            <div class="qr-container">
+                <div class="qr-box">
+                    <div class="qr-placeholder">
+                        <!-- WHATSAPP QR: Upload your WhatsApp QR code here -->
+                        <!-- Example: <img src="images/whatsapp-qr.jpg" alt="WhatsApp QR"> -->
+                        📱
+                    </div>
+                    <div class="qr-label">WhatsApp</div>
+                    <p style="color: #666; margin-top: 0.5rem;">+91-9769310801</p>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Upload WhatsApp QR (images/whatsapp-qr.jpg)</p>
+                </div>
+                
+                <div class="qr-box">
+                    <div class="qr-placeholder">
+                        <!-- INSTAGRAM QR: Upload your Instagram QR code here -->
+                        <!-- Example: <img src="images/instagram-qr.jpg" alt="Instagram QR"> -->
+                        📷
+                    </div>
+                    <div class="qr-label">Instagram</div>
+                    <p style="color: #666; margin-top: 0.5rem;">@jinesh0301</p>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Upload Instagram QR (images/instagram-qr.jpg)</p>
+                </div>
+            </div>
+
+            <button class="cta-button" style="margin-top: 3rem; max-width: 500px;" onclick="preOrder()">
+                🎉 Pre-Order Now with Code FIRST500
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Knit-Pocket. Premium Quality, Affordable Price.</p>
+        <p style="margin-top: 1rem; color: #95a5a6;">Luxury at Less - Making premium accessible to everyone.</p>
+    </footer>
+
+    <script>
+        // Set your launch date here (Year, Month-1, Day, Hour, Minute)
+        const launchDate = new Date(2025, 0, 15, 0, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days >= 0 ? days.toString().padStart(2, '0') : '00';
+            document.getElementById('hours').textContent = hours >= 0 ? hours.toString().padStart(2, '0') : '00';
+            document.getElementById('minutes').textContent = minutes >= 0 ? minutes.toString().padStart(2, '0') : '00';
+            document.getElementById('seconds').textContent = seconds >= 0 ? seconds.toString().padStart(2, '0') : '00';
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown').innerHTML = '<h2 style="color: #667eea; font-size: 3rem;">🎉 We\'re Live! Order Now! 🎉</h2>';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function preOrder() {
+            const message = encodeURIComponent('Hi! I want to pre-order the Knit-Pocket and use coupon code FIRST500 for ₹500 OFF! 🎉');
+            window.open(`https://wa.me/919769310801?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>

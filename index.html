@@ -15,6 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .announcement-bar {
@@ -22,7 +23,7 @@
             color: white;
             padding: 1rem;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
             animation: pulse 2s infinite;
         }
@@ -37,9 +38,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            position: relative;
+            padding: 2rem 1rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
         }
 
         .hero::before {
@@ -58,41 +59,41 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             position: relative;
             z-index: 2;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-tagline {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #feca57;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 600;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-description {
             color: white;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .price-comparison {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 20px;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
@@ -100,18 +101,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 2px solid #f0f0f0;
         }
 
         .apple-price span:first-child {
             color: #666;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .apple-price span:last-child {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #999;
             text-decoration: line-through;
         }
@@ -125,12 +126,12 @@
 
         .our-price span:first-child {
             color: #667eea;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: bold;
         }
 
         .our-price span:last-child {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #667eea;
             font-weight: bold;
         }
@@ -138,92 +139,80 @@
         .savings-badge {
             background: linear-gradient(135deg, #ff6b6b, #feca57);
             color: white;
-            padding: 1rem;
-            border-radius: 15px;
+            padding: 0.8rem;
+            border-radius: 12px;
             text-align: center;
             font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 1rem;
+            font-size: 1rem;
+            margin-top: 0.8rem;
         }
 
         .coupon-section {
             background: #fff9e6;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 15px;
             border: 2px dashed #feca57;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             text-align: center;
         }
 
         .coupon-code {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #ff6b6b;
             letter-spacing: 3px;
-            margin: 0.5rem 0;
+            margin: 0.3rem 0;
         }
 
         .coupon-text {
             color: #666;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .final-price {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 15px;
             text-align: center;
             margin-top: 1rem;
         }
 
         .final-price-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
         .final-price-amount {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin: 0.5rem 0;
+            margin: 0.3rem 0;
         }
 
         .hero-image {
             position: relative;
-        }
-
-        .product-image-placeholder {
-            width: 100%;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            backdrop-filter: blur(10px);
-            border: 3px dashed rgba(255,255,255,0.3);
-            color: white;
-            text-align: center;
-            padding: 2rem;
         }
 
-        .product-image-placeholder img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
             border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .cta-button {
             background: linear-gradient(135deg, #feca57 0%, #ff6b6b 100%);
             color: white;
             border: none;
-            padding: 1.2rem 3rem;
-            font-size: 1.3rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
             border-radius: 50px;
             cursor: pointer;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             font-weight: bold;
@@ -236,7 +225,7 @@
         }
 
         .section {
-            padding: 5rem 2rem;
+            padding: 4rem 1.5rem;
         }
 
         .section-white {
@@ -253,9 +242,9 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             color: #333;
             font-weight: bold;
         }
@@ -263,9 +252,9 @@
         .product-showcase {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
 
         .product-showcase.reverse {
@@ -279,30 +268,28 @@
         .product-image-container {
             position: relative;
             width: 100%;
-            height: 400px;
-            background: #f8f9fa;
-            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .product-image-container img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 500px;
             object-fit: contain;
+            border-radius: 20px;
         }
 
         .product-info h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #667eea;
             margin-bottom: 1rem;
         }
 
         .product-info p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
             color: #666;
             margin-bottom: 1rem;
@@ -310,12 +297,12 @@
 
         .product-info ul {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
 
         .product-info ul li {
-            padding: 0.5rem 0;
-            font-size: 1.1rem;
+            padding: 0.4rem 0;
+            font-size: 1.05rem;
             color: #555;
         }
 
@@ -328,14 +315,14 @@
 
         .color-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .color-item {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: white;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
@@ -348,8 +335,8 @@
         }
 
         .color-swatch {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             margin: 0 auto 1rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -358,28 +345,28 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
             flex-wrap: wrap;
         }
 
         .countdown-item {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 15px;
             text-align: center;
-            min-width: 120px;
+            min-width: 100px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .countdown-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #667eea;
         }
 
         .countdown-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #666;
             text-transform: uppercase;
         }
@@ -388,7 +375,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
 
         .feature {
@@ -407,35 +394,35 @@
         .contact-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 5rem 2rem;
+            padding: 4rem 1.5rem;
             text-align: center;
         }
 
         .qr-container {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 2.5rem;
             flex-wrap: wrap;
         }
 
         .qr-box {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
         }
 
         .qr-placeholder {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background: #f0f0f0;
             border: 3px dashed #667eea;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem;
             border-radius: 15px;
             font-size: 3rem;
         }
@@ -447,19 +434,20 @@
         }
 
         .qr-label {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: #333;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .footer {
             background: #2d3436;
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
+        /* Mobile Responsive */
         @media (max-width: 968px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -467,7 +455,15 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
             }
 
             .product-showcase {
@@ -478,16 +474,69 @@
             .product-showcase.reverse {
                 direction: ltr;
             }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .color-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: 1rem;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .announcement-bar {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+
+            .coupon-code {
+                font-size: 1.5rem;
+            }
+
+            .final-price-amount {
+                font-size: 2rem;
+            }
         }
 
-        .image-upload-note {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            padding: 1rem;
-            margin-top: 1rem;
-            color: #856404;
-            font-size: 0.9rem;
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .color-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .color-swatch {
+                width: 50px;
+                height: 50px;
+            }
+
+            .qr-placeholder {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -515,18 +564,18 @@
                         <span>₹2,299</span>
                     </div>
                     <div class="savings-badge">
-                        Save Over 90%! Premium Quality, Unbeatable Price
+                        Save Over 90%!
                     </div>
                 </div>
 
                 <div class="coupon-section">
                     <div class="coupon-text">🎉 Exclusive Launch Offer</div>
                     <div class="coupon-code">FIRST500</div>
-                    <div class="coupon-text">Get ₹500 OFF on your first order!</div>
+                    <div class="coupon-text">Get ₹500 OFF!</div>
                 </div>
 
                 <div class="final-price">
-                    <div class="final-price-label">Your Final Price with Coupon</div>
+                    <div class="final-price-label">Final Price with Coupon</div>
                     <div class="final-price-amount">₹1,799</div>
                 </div>
 
@@ -534,14 +583,7 @@
             </div>
 
             <div class="hero-image">
-                <div class="product-image-placeholder">
-                    <!-- HERO IMAGE: Replace this div with your main product hero image -->
-                    <!-- Example: <img src="images/hero-product.jpg" alt="Knit-Pocket Hero"> -->
-                    📸 Hero Product Image
-                    <div class="image-upload-note">
-                        Upload your main product showcase image here (images/hero-product.jpg)
-                    </div>
-                </div>
+                <img src="lifestyle-1.jpg" alt="Knit-Pocket Lifestyle">
             </div>
         </div>
     </section>
@@ -550,17 +592,9 @@
         <div class="container">
             <h2 class="section-title">Meet Your Perfect Phone Companion</h2>
 
-            <!-- Product Feature 1 -->
             <div class="product-showcase">
                 <div class="product-image-container">
-                    <!-- IMAGE 1: Upload vertical/standing product images here -->
-                    <!-- Example: <img src="images/product-vertical.jpg" alt="Knit Pocket Vertical"> -->
-                    <div style="text-align: center; padding: 2rem;">
-                        📸<br>Product Image 1
-                        <div class="image-upload-note">
-                            Upload standing/vertical product image (images/product-vertical.jpg)
-                        </div>
-                    </div>
+                    <img src="lifestyle-2.jpg" alt="Knit-Pocket Crossbody">
                 </div>
                 <div class="product-info">
                     <h3>Premium Knit Material</h3>
@@ -576,17 +610,9 @@
                 </div>
             </div>
 
-            <!-- Product Feature 2 -->
             <div class="product-showcase reverse">
                 <div class="product-image-container">
-                    <!-- IMAGE 2: Upload colorful product group images here -->
-                    <!-- Example: <img src="images/product-colors.jpg" alt="Knit Pocket Colors"> -->
-                    <div style="text-align: center; padding: 2rem;">
-                        📸<br>Product Image 2
-                        <div class="image-upload-note">
-                            Upload colorful group product image (images/product-colors.jpg)
-                        </div>
-                    </div>
+                    <img src="product-colors.jpg" alt="Knit-Pocket Color Options">
                 </div>
                 <div class="product-info">
                     <h3>8 Vibrant Colors</h3>
@@ -602,17 +628,9 @@
                 </div>
             </div>
 
-            <!-- Product Feature 3 -->
             <div class="product-showcase">
                 <div class="product-image-container">
-                    <!-- IMAGE 3: Upload usage/lifestyle images here -->
-                    <!-- Example: <img src="images/product-usage.jpg" alt="Knit Pocket Usage"> -->
-                    <div style="text-align: center; padding: 2rem;">
-                        📸<br>Product Image 3
-                        <div class="image-upload-note">
-                            Upload product in use/lifestyle image (images/product-usage.jpg)
-                        </div>
-                    </div>
+                    <img src="lifestyle-1.jpg" alt="Knit-Pocket Usage">
                 </div>
                 <div class="product-info">
                     <h3>Versatile & Functional</h3>
@@ -677,22 +695,22 @@
                 <div class="feature">
                     <div class="feature-icon">💎</div>
                     <h3>Premium Quality</h3>
-                    <p>Same materials and craftsmanship as luxury brands, tested for durability and comfort</p>
+                    <p>Same materials and craftsmanship as luxury brands</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">💰</div>
                     <h3>Unbeatable Price</h3>
-                    <p>Over 90% savings compared to Apple's original while maintaining the same quality</p>
+                    <p>Over 90% savings compared to Apple's original</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🛡️</div>
                     <h3>Superior Protection</h3>
-                    <p>Soft knit material protects your phone from scratches, drops, and daily wear</p>
+                    <p>Protects from scratches, drops, and daily wear</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🌈</div>
                     <h3>Style Options</h3>
-                    <p>8 vibrant colors to match your personality and outfit</p>
+                    <p>8 vibrant colors to match your personality</p>
                 </div>
             </div>
         </div>
@@ -701,8 +719,8 @@
     <section class="section section-light">
         <div class="container">
             <h2 class="section-title">🎉 Launch Countdown</h2>
-            <p style="text-align: center; font-size: 1.3rem; color: #666; margin-bottom: 2rem;">
-                Pre-orders are live! Don't miss out on exclusive launch pricing!
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">
+                Pre-orders are live! Don't miss exclusive launch pricing!
             </p>
             <div class="countdown">
                 <div class="countdown-item">
@@ -728,36 +746,30 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="section-title" style="color: white;">Stay Connected & Pre-Order Now!</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-                Follow us for exclusive updates and use code <strong style="font-size: 1.5rem; color: #feca57;">FIRST500</strong> for ₹500 OFF!
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Follow us and use code <strong style="font-size: 1.4rem; color: #feca57;">FIRST500</strong> for ₹500 OFF!
             </p>
             
             <div class="qr-container">
                 <div class="qr-box">
                     <div class="qr-placeholder">
-                        <!-- WHATSAPP QR: Upload your WhatsApp QR code here -->
-                        <!-- Example: <img src="images/whatsapp-qr.jpg" alt="WhatsApp QR"> -->
                         📱
                     </div>
                     <div class="qr-label">WhatsApp</div>
                     <p style="color: #666; margin-top: 0.5rem;">+91-9769310801</p>
-                    <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Upload WhatsApp QR (images/whatsapp-qr.jpg)</p>
                 </div>
                 
                 <div class="qr-box">
                     <div class="qr-placeholder">
-                        <!-- INSTAGRAM QR: Upload your Instagram QR code here -->
-                        <!-- Example: <img src="images/instagram-qr.jpg" alt="Instagram QR"> -->
                         📷
                     </div>
                     <div class="qr-label">Instagram</div>
                     <p style="color: #666; margin-top: 0.5rem;">@jinesh0301</p>
-                    <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Upload Instagram QR (images/instagram-qr.jpg)</p>
                 </div>
             </div>
 
-            <button class="cta-button" style="margin-top: 3rem; max-width: 500px;" onclick="preOrder()">
-                🎉 Pre-Order Now with Code FIRST500
+            <button class="cta-button" style="margin-top: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto;" onclick="preOrder()">
+                🎉 Pre-Order with FIRST500
             </button>
         </div>
     </section>
@@ -768,7 +780,6 @@
     </footer>
 
     <script>
-        // Set your launch date here (Year, Month-1, Day, Hour, Minute)
         const launchDate = new Date(2025, 0, 15, 0, 0, 0).getTime();
 
         function updateCountdown() {
@@ -787,7 +798,7 @@
 
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.querySelector('.countdown').innerHTML = '<h2 style="color: #667eea; font-size: 3rem;">🎉 We\'re Live! Order Now! 🎉</h2>';
+                document.querySelector('.countdown').innerHTML = '<h2 style="color: #667eea; font-size: 2rem;">🎉 We\'re Live! Order Now! 🎉</h2>';
             }
         }
 
